@@ -12,6 +12,11 @@ class FactionManager{
     public function __construct(){
     }
 
+    /**
+     * Used to add an existing Faction when Loading from a provider.
+     *
+     * @param Faction $faction
+     */
     public function registerFaction(Faction $faction) : void{
 
     }

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace BreathTakinglyBinary\DynamicFactions;
 
-
+use BreathTakinglyBinary\DynamicFactions\commands\BaseFactionCommand;
 use pocketmine\plugin\PluginBase;
 
 class DynamicFactions extends PluginBase{
@@ -14,10 +14,15 @@ class DynamicFactions extends PluginBase{
     /** @var FactionManager */
     private $factionManager;
 
-    public function onEnable(){
+    public function onEnable() : void{
         self::$instance = $this;
         $this->factionManager = new FactionManager();
-        $this->getServer()->getCommandMap()->register("dynamicfactions", new BaseFactionCommand("faction", "", ["f"]));
+        $this->getServer()->getCommandMap()->register("dynamicfactions", new BaseFactionCommand(
+            $this,
+            "faction",
+            "The Main Faction command",
+            ["f", "factions"]
+        ));
     }
 
     /**

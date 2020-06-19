@@ -1,14 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
 namespace BreathTakinglyBinary\DynamicFactions\events;
 
-
 use BreathTakinglyBinary\DynamicFactions\Faction;
-use pocketmine\event\Cancellable;
 use pocketmine\event\Event;
 
-abstract class FactionEvent extends Event implements Cancellable{
+abstract class FactionEvent extends Event{
 
     private $faction;
 
